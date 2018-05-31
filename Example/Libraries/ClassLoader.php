@@ -213,7 +213,9 @@ class ClassLoader
                         echo "Class Name: {$class_name}" . PHP_EOL;
                     }
 
-                    $location_file = rtrim($dir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $class_name . '.php';
+                    $location_file = rtrim($dir, DIRECTORY_SEPARATOR);
+                    $location_file .= DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $namespace);
+                    $location_file .= DIRECTORY_SEPARATOR . $class_name . '.php';
 
                     if (self::$_l_open_debug) {
                         echo "Location File: {$location_file}" . PHP_EOL;

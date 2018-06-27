@@ -148,7 +148,7 @@ class ClassLoader
     public static function loadClass($class)
     {
         if ((true === self::$_l_apc && ($file = self::findFileInApc($class))) || ($file = self::findFile($class))) {
-            require_once "ClassLoader.php";
+            require_once "{$file}";
         }
     }
 
